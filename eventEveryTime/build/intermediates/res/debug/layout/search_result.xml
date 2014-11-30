@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <TextView 
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:text="人物"/>
+    <ImageView 
+        android:layout_height="4dp"
+        android:layout_width="match_parent"
+        android:background="@drawable/amsc_tag_accepted"/>
+    <ListView 
+        android:id="@+id/lv_search_result_person"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"/>
+        <TextView 
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:text="事件"/>
+    <ImageView 
+        android:layout_height="4dp"
+        android:layout_width="match_parent"
+        android:background="@drawable/amsc_tag_accepted"/>
+    <ListView 
+        android:id="@+id/lv_search_result_event"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"/>
+        <TextView 
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:text="项目"/>
+    <ImageView 
+        android:layout_height="4dp"
+        android:layout_width="match_parent"
+        android:background="@drawable/amsc_tag_accepted"/>
+    <ListView 
+        android:id="@+id/lv_search_result_project"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"/>
+        <TextView 
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:text="公司"/>
+    <ImageView 
+        android:layout_height="4dp"
+        android:layout_width="match_parent"
+        android:background="@drawable/amsc_tag_accepted"/>
+    <ListView 
+        android:id="@+id/lv_search_result_company"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"/>
+
+</LinearLayout>
+<!-- From: file:/home/gavin/AndroidStudioProjects/EventEveryTime/eventEveryTime/src/main/res/layout/search_result.xml -->

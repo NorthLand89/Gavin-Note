@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_vip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp" >
+
+
+        <android.support.v4.view.PagerTitleStrip
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </android.support.v4.view.ViewPager>
+
+    <TableLayout
+        android:id="@+id/button_layout"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true" >
+	<TableRow 
+	    android:layout_height="40dp"
+	    android:layout_width="match_parent">
+	    
+	  
+        <Button
+            android:id="@+id/bt_add"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="8"
+            android:text="添加" 
+            android:onClick="onClick"/>
+        <Button 
+            android:id="@+id/bt_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="search"
+            android:onClick="onClick"/>
+	</TableRow>
+    </TableLayout>
+
+</RelativeLayout>

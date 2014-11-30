@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="300dp" >
+
+    <ImageView
+        android:id="@+id/ImageView01"
+        android:layout_width="wrap_content"
+        android:layout_height="3dp"
+        android:layout_alignBottom="@+id/tv_detail_project_name"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/ic_dropshadow" />
+
+    <TextView
+        android:id="@+id/tv_detail_project_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="14dp"
+        android:text="项目名称"
+        android:textAppearance="?android:attr/textAppearanceLarge" 
+        android:textSize="50dp"
+        android:textColor="#000000"/>
+
+    <TextView
+        android:id="@+id/textView1111"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/ImageView01"
+        android:text="详情:" 
+        android:textSize="40dp"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/tv_detail_project_note"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textView1111"
+        android:layout_margin="10dp"
+        android:text="" 
+        android:textSize="25dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#000000" />
+
+    <ImageView
+        android:id="@+id/imageview1"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/tv_detail_project_note"
+        android:background="@drawable/ic_dropshadow" />
+
+</RelativeLayout>
+<!-- From: file:/home/gavin/AndroidStudioProjects/EventEveryTime/eventEveryTime/src/main/res/layout/detail_project.xml -->

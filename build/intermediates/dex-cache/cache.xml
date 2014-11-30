@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pre-dex-items>
+
+    <item
+        dex="/home/gavin/AndroidStudioProjects/EventEveryTime/eventEveryTime/build/intermediates/pre-dexed/debug/scribe-1.3.1-ef07ee8f62ca5461e78aeafab84de874639f6e6f.jar"
+        jar="/home/gavin/AndroidStudioProjects/EventEveryTime/eventEveryTime/build/intermediates/exploded-aar/EventEveryTime/library/unspecified/libs/scribe-1.3.1.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="417b13630d02e4509d0ee34afcfbf281fa77f7bc"/>
+    <item
+        dex="/home/gavin/AndroidStudioProjects/EventEveryTime/eventEveryTime/build/intermediates/pre-dexed/debug/support-v4-18.0.0-4e6f919d7929a4cdef62c38d6faa5803dc10d75a.jar"
+        jar="/home/gavin/work/SDK/extras/android/m2repository/com/android/support/support-v4/18.0.0/support-v4-18.0.0.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="44ec51e9d395a47aab135e5e1b556c0007442156"/>
+    <item
+        dex="/home/gavin/AndroidStudioProjects/EventEveryTime/eventEveryTime/build/intermediates/pre-dexed/debug/evernote-api-1.25-bd195bfc1792428bd04fb2f4a23f6529c7c84286.jar"
+        jar="/home/gavin/AndroidStudioProjects/EventEveryTime/eventEveryTime/build/intermediates/exploded-aar/EventEveryTime/library/unspecified/libs/evernote-api-1.25.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="a45a0f562b2867176a2f5f0e6c0010c9a2416e1c"/>
+    <item
+        dex="/home/gavin/AndroidStudioProjects/EventEveryTime/eventEveryTime/build/intermediates/pre-dexed/debug/classes-131655e1bfd0c7fc003eb1a33f596b0a0f43a3b9.jar"
+        jar="/home/gavin/AndroidStudioProjects/EventEveryTime/eventEveryTime/build/intermediates/exploded-aar/EventEveryTime/library/unspecified/classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="4012d176064048f728c22b2a0b55abf72c317b65"/>
+    <item
+        dex="/home/gavin/AndroidStudioProjects/EventEveryTime/eventEveryTime/build/intermediates/pre-dexed/debug/classes-b8f0951f8bbea37ff0a735dd1c7ee90c4fa9639c.jar"
+        jar="/home/gavin/AndroidStudioProjects/EventEveryTime/eventEveryTime/build/intermediates/exploded-aar/EventEveryTime/slidingmenu_library/unspecified/classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="d104b8a58c229981d6d52fae8496ed8ade0ed25e"/>
+
+</pre-dex-items>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_alignParentLeft="true"
+    android:orientation="vertical" >
+    <ImageButton 
+        android:id="@+id/bt_isreminder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+ 
+        android:background="#00000000"
+        android:scaleType="fitCenter"
+        android:layout_margin="4dp"
+        android:visibility="gone"
+        />
+
+    <ImageButton
+        android:id="@+id/bt_remove"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="#00000000"
+        android:scaleType="fitCenter"
+        android:layout_margin="4dp"
+        android:src="@drawable/ic_action_close" />
+
+    <ImageButton
+        android:id="@+id/bt_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/imageButton1"
+        android:background="#00000000"
+        android:scaleType="fitCenter"
+        
+        android:layout_margin="4dp"
+        android:src="@drawable/ic_action_edit" />
+
+    <ImageButton
+        android:id="@+id/bt_send_to_evernote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/imageButton2"
+        android:background="#00000000"
+        android:scaleType="fitCenter"
+        
+        android:layout_margin="3dp"
+        android:src="@drawable/ex_note_logo" />
+    <ImageButton
+        android:id="@+id/bt_send_to_share"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/imageButton2"
+        android:background="#00000000"
+        android:scaleType="fitCenter"
+        
+        android:layout_margin="3dp"
+        android:src="@drawable/copy" />
+</LinearLayout>
+   
+</RelativeLayout>
+<!-- From: file:/home/gavin/AndroidStudioProjects/EventEveryTime/eventEveryTime/src/main/res/layout/browser_bottom.xml -->

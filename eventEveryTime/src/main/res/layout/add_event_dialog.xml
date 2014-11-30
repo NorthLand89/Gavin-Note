@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:stretchColumns="1"
+    >
+
+
+  <TableRow 
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content">
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="名称"
+            android:layout_weight="1"/>
+    <EditText
+        android:id="@+id/et_add_event_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10" 
+            android:layout_weight="5"/>
+        
+    </TableRow>
+
+    <TableRow 
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content">
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="详情"
+            android:layout_weight="1"/>
+            <EditText
+        android:id="@+id/et_add_event_note"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10" 
+            android:layout_weight="5"/>
+        
+    </TableRow>
+
+    <Switch
+        android:id="@+id/sw_dialog_alarm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="设置提醒" />
+
+    <Spinner
+        android:id="@+id/sp_add_event_project"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+
+    <Spinner
+        android:id="@+id/sp_add_event_person"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/bt_add_event_add_person"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="添加人物" />
+
+    
+
+    <ListView
+        android:id="@+id/lv_add_event_selected_person"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </ListView>
+ <TableRow 
+     android:layout_width="wrap_content"
+     android:layout_height="match_parent"
+     >
+     
+     
+     
+
+<DatePicker
+        android:id="@+id/datePicker1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:calendarViewShown="false" />
+<TimePicker 
+    android:id="@+id/timePicker1"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    android:layout_width="wrap_content"/>
+     
+ </TableRow>
+</TableLayout>

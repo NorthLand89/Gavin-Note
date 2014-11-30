@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SlidingMenu"><attr name="mode"><enum name="left" value="0"/><enum name="right" value="1"/></attr><attr format="reference" name="viewAbove"/><attr format="reference" name="viewBehind"/><attr format="dimension" name="behindOffset"/><attr format="dimension" name="behindWidth"/><attr format="float" name="behindScrollScale"/><attr name="touchModeAbove"><enum name="margin" value="0"/><enum name="fullscreen" value="1"/></attr><attr name="touchModeBehind"><enum name="margin" value="0"/><enum name="fullscreen" value="1"/></attr><attr format="reference" name="shadowDrawable"/><attr format="dimension" name="shadowWidth"/><attr format="boolean" name="fadeEnabled"/><attr format="float" name="fadeDegree"/><attr format="boolean" name="selectorEnabled"/><attr format="reference" name="selectorDrawable"/></declare-styleable>
+    <!-- From: file:/home/gavin/AndroidStudioProjects/EventEveryTime/eventEveryTime/src/main/res/values/dimens.xml -->
+    <eat-comment/>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="list_padding">10dp</dimen>
+    <dimen name="shadow_width">15dp</dimen>
+    <dimen name="slidingmenu_offset">60dp</dimen>
+    <!-- From: file:/home/gavin/AndroidStudioProjects/EventEveryTime/eventEveryTime/build/intermediates/exploded-aar/EventEveryTime/slidingmenu_library/unspecified/res/values/values.xml -->
+    <eat-comment/>
+    <item name="selected_view" type="id"/>
+    <!-- From: file:/home/gavin/AndroidStudioProjects/EventEveryTime/eventEveryTime/src/main/res/values/dimens.xml -->
+    <eat-comment/>
+    <integer name="num_cols">1</integer>
+    <!-- From: file:/home/gavin/AndroidStudioProjects/EventEveryTime/eventEveryTime/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="action_settings">Settings</string>
+    <string name="add">添加</string>
+    <string name="app_name">大猫记事</string>
+    <!-- From: file:/home/gavin/AndroidStudioProjects/EventEveryTime/eventEveryTime/build/intermediates/exploded-aar/EventEveryTime/library/unspecified/res/values/values.xml -->
+    <eat-comment/>
+    <string name="esdk__err_api_setup">Error intializing Evernote API</string>
+    <string name="esdk__err_authentication">Error authenticating to Evernote</string>
+    <string name="esdk__err_protocol_version">Incomatible EDAM client protocol version</string>
+    <string name="esdk__evernote">Evernote</string>
+    <string name="esdk__evernote_login_failed">Evernote Login Failed</string>
+    <string name="esdk__evernote_login_successful">Evernote login successful</string>
+    <string name="esdk__loading">Loading...</string>
+    <!-- From: file:/home/gavin/AndroidStudioProjects/EventEveryTime/eventEveryTime/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="hello_world">Hello world!</string>
+    <!-- From: file:/home/gavin/AndroidStudioProjects/EventEveryTime/eventEveryTime/src/main/res/values/styles.xml -->
+    <eat-comment/>
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+</resources>

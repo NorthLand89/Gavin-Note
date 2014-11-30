@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/esdk__switch_service"
+        android:showAsAction="always"
+        android:title="Switch Service" />
+</menu>
+<!-- From: file:/home/gavin/AndroidStudioProjects/EventEveryTime/library/src/main/res/menu/esdk__oauth.xml -->

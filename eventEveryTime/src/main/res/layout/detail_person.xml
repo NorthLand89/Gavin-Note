@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/TableLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="300dp" >
+
+    <TextView
+        android:id="@+id/tv_detail_person_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="人名"
+        android:layout_gravity="center_horizontal" 
+        android:textSize="50dp"/>
+
+    <ImageView
+        android:id="@+id/ImageView01"
+        android:layout_width="wrap_content"
+        android:layout_height="3dp"
+        android:background="@drawable/ic_dropshadow" />
+
+    <TableRow
+        android:id="@+id/tableRow1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+       
+         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="手机:"
+            android:layout_weight="1" 
+            android:textSize="25dp"
+        android:textColor="#000000"/>
+        
+        <TextView
+            android:id="@+id/tv_detail_person_cellphone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="手机"
+            android:layout_weight="5" 
+        android:textSize="25dp"
+        android:textColor="#000000"/>
+   <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="固话:"
+            android:layout_weight="1" 
+        android:textSize="25dp"
+        android:textColor="#000000"/>
+        <TextView
+            android:id="@+id/tv_detail_person_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="固定电话"
+            android:layout_weight="5"
+        android:textSize="25dp"
+        android:textColor="#000000" />
+        
+    </TableRow>
+     
+      
+        
+
+    <TableRow
+        android:id="@+id/tableRow2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+   <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="公司:"
+            android:layout_weight="1" 
+        android:textSize="25dp"
+        android:textColor="#000000"/>
+        <TextView
+            android:id="@+id/tv_detail_person_company"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="公司"
+            android:layout_weight="1" 
+        android:textSize="25dp"
+        android:textColor="#000000"/>
+           <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="职位:"
+            android:layout_weight="1" 
+        android:textSize="25dp"
+        android:textColor="#000000"/>
+        <TextView
+            android:id="@+id/tv_detail_person_position"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="职位"
+            android:layout_weight="1" 
+        android:textSize="25dp"
+        android:textColor="#000000"/>
+    </TableRow>
+	<TableRow 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    >
+	    
+	       <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="邮箱:"
+        android:textSize="25dp"
+            android:layout_weight="1" 
+        android:textColor="#000000"/>
+	         <TextView
+            android:id="@+id/tv_detail_person_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="邮箱" 
+        android:textSize="25dp"
+            android:layout_weight="10"
+        android:textColor="#000000"/>
+	</TableRow>
+   
+
+
+    <ImageView
+        android:id="@+id/imageview1"
+        android:layout_width="wrap_content"
+        android:layout_height="3dp"
+        android:background="@drawable/ic_dropshadow" />
+    <TextView 
+        android:id="@+id/tv_detail_person_note"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:textSize="25dp"
+        android:textColor="#000000"/>
+
+</TableLayout>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+   
+        <EditText
+            android:id="@+id/et_add_person_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="姓名" >
+
+            <requestFocus />
+        </EditText>
+
+        <EditText
+            android:id="@+id/et_add_person_mobilePhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="手机" />
+
+        <EditText
+            android:id="@+id/et_add_person_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="邮箱" />
+
+        <EditText
+            android:id="@+id/et_add_person_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="固定电话"/>
+
+        <Spinner 
+            android:id="@+id/sp_add_person_company"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+
+
+        <EditText
+            android:id="@+id/et_add_person_position"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="职务" />
+
+
+
+
+        <EditText
+            android:id="@+id/et_add_person_note"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10" 
+            android:hint="备注"/>
+
+
+    <TableRow
+        android:id="@+id/tableRow5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+
+
+    </TableRow>
+
+</TableLayout>

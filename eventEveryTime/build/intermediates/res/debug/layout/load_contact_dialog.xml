@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal" >
+
+    <ListView
+        android:id="@+id/lv_load_contact_select"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/table123"
+        android:layout_alignParentTop="true" >
+
+    </ListView>
+
+    <Button
+        android:id="@+id/bt_add_contact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+ 
+        android:text="添加" />
+
+    <TableRow
+        android:id="@+id/table123"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bt_add_contact"
+        android:layout_alignParentLeft="true" >
+
+        <Button
+            android:id="@+id/bt_select_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="全选" />
+
+        <Button
+            android:id="@+id/bt_select_none"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="全不选" />
+    </TableRow>
+
+</RelativeLayout>
+<!-- From: file:/home/gavin/AndroidStudioProjects/EventEveryTime/eventEveryTime/src/main/res/layout/load_contact_dialog.xml -->

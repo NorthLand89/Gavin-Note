@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TableLayout
+        android:id="@+id/tableLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/tv_menu_project"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:text="项目"
+            android:textSize="50dp" />
+
+        <ImageButton
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="@drawable/ic_dropshadow" />
+
+        <TextView
+            android:id="@+id/tv_menu_Person"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/tv_menu_project"
+            android:text="人物"
+            android:textSize="50dp" />
+
+        <ImageButton
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="@drawable/ic_dropshadow" />
+
+        <TextView
+            android:id="@+id/tv_menu_Event"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/tv_menu_Person"
+            android:text="事件"
+            android:textSize="50dp" />
+
+        <ImageButton
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="@drawable/ic_dropshadow" />
+
+        <TextView
+            android:id="@+id/tv_menu_Company"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/tv_menu_Event"
+            android:text="公司"
+            android:textSize="50dp" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="@drawable/ic_dropshadow" />
+
+        <Switch
+            android:id="@+id/sw_bind_evernote"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="20dp"
+            android:text="印象笔记"
+            android:textSize="20dp" />
+
+        <Switch
+            android:id="@+id/sw_switch_reminder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="事件提醒"
+            android:textSize="20dp" />
+
+        <Switch
+            android:id="@+id/sw_switch_phone_reminder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="电话记录"
+            android:textSize="20dp" />
+
+        <Switch
+            android:id="@+id/sw_switch_message_reminder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="短信记录"
+            android:textSize="20dp" />
+      
+    
+
+              <Button 
+            android:id="@+id/bt_start_load_contact"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="载入系统联系人"/>
+   
+            "
+    </TableLayout>
+
+    <TableLayout
+        android:id="@+id/tableLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:background="#F2F2F2" >
+
+        <Button
+            android:id="@+id/bt_menu_add_event"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="添加事件"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/bt_menu_add_person"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="添加人物"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/bt_menu_add_project"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="添加项目"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/bt_menu_add_company"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="添加公司"
+            android:visibility="gone" />
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/bt_menu_add"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="添加" />
+
+            <Button
+                android:id="@+id/bt_menu_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="查找" />
+        </TableRow>
+    </TableLayout>
+
+    <EditText
+        android:id="@+id/et_menu_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tableLayout2"
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/blue_shadow"
+        android:ems="10"
+        android:hint="" >
+
+        <requestFocus />
+    </EditText>
+
+</RelativeLayout><!-- From: file:/home/gavin/AndroidStudioProjects/EventEveryTime/eventEveryTime/src/main/res/layout/menu.xml -->

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+  <TextView
+        android:id="@+id/tv_detail_event_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="事件名"
+        android:textSize="60dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#000000" />
+<TextView
+        android:id="@+id/textView001"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/tv_detail_event_name"
+        android:text="时间:"
+        android:textSize="40sp" />
+<TextView
+        android:id="@+id/tv_detail_events_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/tv_detail_event_name"
+        android:text="Medium Text"
+        android:textSize="40sp"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+<TextView
+        android:id="@+id/textView002"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/textView001"
+        android:text="所属项目:"
+        android:textSize="40sp"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+<ImageView
+        android:id="@+id/imageView001"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/textView002"
+        android:background="@drawable/ic_dropshadow" />
+<TextView
+        android:id="@+id/tv_detail_event_project"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/textView001"
+        android:text="啊哈"
+        android:textSize="40sp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#000000" />
+
+    <LinearLayout
+        android:id="@+id/LinearLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/imageView001" >
+
+        <ListView
+            android:id="@+id/listView1"
+            android:layout_width="158dp"
+            android:layout_height="wrap_content" >
+        </ListView>
+
+        <ListView
+            android:id="@+id/listView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+        </ListView>
+    </LinearLayout>
+   <ImageView
+        android:id="@+id/ImageView002"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_below="@id/LinearLayout1"
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/ic_dropshadow" />
+
+    
+    <TextView
+        android:id="@+id/whatever"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/LinearLayout1"
+        android:text="详情" 
+        android:textSize="30sp"/>
+
+    <TextView
+        android:id="@+id/tv_detail_event_note"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/whatever"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="20sp" />
+
+    
+   
+
+    
+
+    
+
+    
+
+</RelativeLayout>
