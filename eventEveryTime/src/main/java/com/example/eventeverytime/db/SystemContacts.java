@@ -64,7 +64,7 @@ public class SystemContacts {
 
 		}
 
-		Log.i("tag", persons.get(1).toString());
+//
 		cursor.close();
 		return persons;
 

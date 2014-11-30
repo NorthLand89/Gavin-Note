@@ -51,6 +51,10 @@
 
         <!-- 绑定笔记 -->
         <activity android:name="com.example.eventeverytime.evernote.HelloEDAM" >
+            <intent-filter>
+                <action android:name="bind.evernote"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
         </activity>
         <!-- 发送笔记 -->
         <activity android:name="com.example.eventeverytime.evernote.SimpleNote" >
@@ -80,7 +84,11 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name="LoadSystemContactActivity" >
+        <activity android:name=".activity.LoadSystemContactActivity" >
+            <intent-filter>
+                <action android:name="LoadContact"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
         </activity>
 
         <receiver
@@ -95,7 +103,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.LoadSystemContactActivity"></activity>
+        <activity android:name="com.evernote.client.android.EvernoteOAuthActivity"/>
     </application>
 
 </manifest>

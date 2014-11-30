@@ -53,7 +53,7 @@ public class MenuFragment extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
-		
+
 		mEvernoteSession = EvernoteSession.getInstance(getActivity(), Final.CONSUMER_KEY, Final.CONSUMER_SECRET, Final.EVERNOTE_SERVICE, Final.SUPPORT_APP_LINKED_NOTEBOOKS);
 		  
 		view = inflater.inflate(R.layout.menu, null);
@@ -86,6 +86,7 @@ public class MenuFragment extends Fragment {
 		loadContactButton=(Button) view.findViewById(R.id.bt_start_load_contact);
 		loadContactButton.setOnClickListener(new MenuOnClickListener());
 		editText = (EditText) view.findViewById(R.id.et_menu_search);
+        editText.setAlpha(15);
 		evernoteSwitch = (Switch)view.findViewById(R.id.sw_bind_evernote);
 		phoneSwitch = (Switch) view.findViewById(R.id.sw_switch_phone_reminder);
 		phoneSwitch.setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -184,7 +185,9 @@ public class MenuFragment extends Fragment {
 	}
 	public void startLoad(){
 		Intent intent = new Intent();
-		intent.setClass(getActivity(),LoadSystemContactActivity.class);
+        intent.setAction("LoadContact");
+//		intent.setClass(getActivity(),LoadSystemContactActivity.class);
+
 		startActivity(intent);
 	}
 	public void search(){

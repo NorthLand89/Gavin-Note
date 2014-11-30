@@ -17,7 +17,7 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:text="项目"
-            android:textSize="50dp" />
+            android:textSize="30dp" />
 
         <ImageButton
             android:layout_width="match_parent"
@@ -31,7 +31,7 @@
             android:layout_alignParentLeft="true"
             android:layout_below="@+id/tv_menu_project"
             android:text="人物"
-            android:textSize="50dp" />
+            android:textSize="30dp" />
 
         <ImageButton
             android:layout_width="match_parent"
@@ -45,7 +45,7 @@
             android:layout_alignParentLeft="true"
             android:layout_below="@+id/tv_menu_Person"
             android:text="事件"
-            android:textSize="50dp" />
+            android:textSize="30dp" />
 
         <ImageButton
             android:layout_width="match_parent"
@@ -59,7 +59,7 @@
             android:layout_alignParentLeft="true"
             android:layout_below="@+id/tv_menu_Event"
             android:text="公司"
-            android:textSize="50dp" />
+            android:textSize="30dp"/>
 
         <ImageView
             android:layout_width="match_parent"
@@ -73,7 +73,7 @@
             android:layout_alignParentLeft="true"
             android:layout_marginTop="20dp"
             android:text="印象笔记"
-            android:textSize="20dp" />
+            android:textSize="15dp" />
 
         <Switch
             android:id="@+id/sw_switch_reminder"
@@ -81,7 +81,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:text="事件提醒"
-            android:textSize="20dp" />
+            android:textSize="15dp" />
 
         <Switch
             android:id="@+id/sw_switch_phone_reminder"
@@ -89,7 +89,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:text="电话记录"
-            android:textSize="20dp" />
+            android:textSize="15dp" />
 
         <Switch
             android:id="@+id/sw_switch_message_reminder"
@@ -97,17 +97,18 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:text="短信记录"
-            android:textSize="20dp" />
+            android:textSize="15dp" />
       
     
 
               <Button 
             android:id="@+id/bt_start_load_contact"
             android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:text="载入系统联系人"/>
+            android:layout_height="wrap_content"
+            android:text="载入系统联系人"
+                  android:textSize="15dp"/>
    
-            "
+
     </TableLayout>
 
     <TableLayout
