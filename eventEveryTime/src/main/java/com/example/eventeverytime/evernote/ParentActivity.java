@@ -60,9 +60,7 @@ public class ParentActivity extends  Activity {
    */
 
   // Your Evernote API key. See http://dev.evernote.com/documentation/cloud/
-  // Please obfuscate your code to help keep these values secret.
-  
-  //Á½¸öÃØÔ¿
+
   public static final String CONSUMER_KEY = "northland89";
  public static final String CONSUMER_SECRET = "5bc697d6fb053e76";
 
@@ -96,7 +94,7 @@ public class ParentActivity extends  Activity {
   // using createDialog, could use Fragments instead
   @SuppressWarnings("deprecation")
   @Override
-  //activity µÄ·½·¨
+  //activity ï¿½Ä·ï¿½ï¿½ï¿½
   protected Dialog onCreateDialog(int id) {
     switch (id) {
       case DIALOG_PROGRESS:
@@ -123,7 +121,7 @@ public class ParentActivity extends  Activity {
    */
   protected void invokeOnAppLinkedNotebook(final OnClientCallback<Pair<AsyncLinkedNoteStoreClient, LinkedNotebook>> callback) {
     try {
-      // µÃµ½È«¾ÖÎ¨Ò»µÄ±Ê¼Ç±¾
+      // ï¿½Ãµï¿½È«ï¿½ï¿½Î¨Ò»ï¿½Ä±Ê¼Ç±ï¿½
       mEvernoteSession.getClientFactory().createNoteStoreClient().listLinkedNotebooks(new OnClientCallback<List<LinkedNotebook>>() {
         @Override
         public void onSuccess(List<LinkedNotebook> linkedNotebooks) {
@@ -176,7 +174,7 @@ public class ParentActivity extends  Activity {
       @Override
       public void onException(Exception exception) {
         Log.e(LOGTAG, "Error creating linked notestore", exception);
-        Toast.makeText(getApplicationContext(), "±£´æÊ§°Ü", Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), "ï¿½ï¿½ï¿½ï¿½Ê§ï¿½ï¿½", Toast.LENGTH_LONG).show();
         removeDialog(DIALOG_PROGRESS);
       }
     });

@@ -9,7 +9,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="事件名"
-                android:textSize="40dp"
+                android:textSize="30sp"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
 
@@ -21,6 +21,7 @@
          android:layout_alignParentRight="true"
          android:layout_below="@+id/tv_item_event_project"
          android:text="时间"
+         android:textSize="20sp"
          android:textAppearance="?android:attr/textAppearanceMedium" />
 
      <LinearLayout
@@ -32,25 +33,25 @@
          <TextView
              android:id="@+id/tv_item_event_first"
              android:layout_width="wrap_content"
-             android:layout_height="20dp"
+             android:layout_height="20sp"
              android:text="" />
 
          <TextView
              android:id="@+id/tv_item_event_second"
              android:layout_width="wrap_content"
-             android:layout_height="20dp"
+             android:layout_height="20sp"
              android:text="" />
 
          <TextView
              android:id="@+id/tv_item_event_forth"
              android:layout_width="wrap_content"
-             android:layout_height="20dp"
+             android:layout_height="20sp"
              android:text="" />
 
          <TextView
              android:id="@+id/tv_item_event_third"
              android:layout_width="wrap_content"
-             android:layout_height="20dp"
+             android:layout_height="20sp"
              android:text="" />
      </LinearLayout>
 
@@ -60,6 +61,7 @@
          android:layout_above="@+id/tv_item_event_time"
          android:layout_toLeftOf="@+id/tv_item_event_project"
          android:text="项目:"
+         android:textSize="20sp"
          android:textAppearance="?android:attr/textAppearanceMedium" />
 
      <TextView
@@ -69,6 +71,7 @@
          android:layout_alignParentRight="true"
          android:layout_alignParentTop="true"
          android:text="所属项目"
+         android:textSize="20sp"
          android:textAppearance="?android:attr/textAppearanceMedium" />
 
 </RelativeLayout>

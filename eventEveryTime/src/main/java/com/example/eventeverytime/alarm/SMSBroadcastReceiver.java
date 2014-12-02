@@ -44,7 +44,7 @@ public class SMSBroadcastReceiver extends BroadcastReceiver {
             	}
             }
             
-            int eventId=MyDB.getInstance(context).insertEvent(new Event(0, "来自"+(person==null?builder.toString():person.getName())+"的信息", 0, content, sms.getTimestampMillis()).getContValues());
+            int eventId=MyDB.getInstance(context).insertEvent(new Event(0, "message from"+(person==null?builder.toString():person.getName()), 0, content, sms.getTimestampMillis()).getContValues());
            if(person!=null)
         	   MyDB.getInstance(context).insertIndex(new Index(0, eventId, person.getId()).getContValues());
           

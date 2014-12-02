@@ -45,11 +45,7 @@ import com.example.eventeverytime.R;
 
 import java.util.List;
 
-/**
- * 用于发送笔记的Activity
- * 
- *
- */
+
 public class SimpleNote extends ParentActivity {
 
 
@@ -63,11 +59,10 @@ public class SimpleNote extends ParentActivity {
 
   private String mSelectedNotebookGuid;
 
-  // Callback used as a result of creating a note in a normal notebook or a linked notebook
   private OnClientCallback<Note> mNoteCreateCallback = new OnClientCallback<Note>() {
     @Override
     public void onSuccess(Note note) {
-      Toast.makeText(getApplicationContext(),"保存成功", Toast.LENGTH_LONG).show();
+      Toast.makeText(getApplicationContext(),"save successfully", Toast.LENGTH_LONG).show();
       
       removeDialog(DIALOG_PROGRESS);
       finish();
@@ -76,7 +71,7 @@ public class SimpleNote extends ParentActivity {
     @Override
     public void onException(Exception exception) {
       Log.e(LOGTAG, "Error saving note", exception);
-      Toast.makeText(getApplicationContext(), "保存失败", Toast.LENGTH_LONG).show();
+      Toast.makeText(getApplicationContext(), "save failed", Toast.LENGTH_LONG).show();
       removeDialog(DIALOG_PROGRESS);
       finish();
     }
@@ -90,15 +85,12 @@ public class SimpleNote extends ParentActivity {
     Note note = (Note) getIntent().getSerializableExtra("note");
     saveNote(note);
   }
-/**
- * 保存笔记
- * @param note
- */
+
 
   public void saveNote(Note note) {
 
 	  if(!mEvernoteSession.isLoggedIn()){
-		  Toast.makeText(getApplicationContext(), "尚未绑定至印象笔记账号", Toast.LENGTH_LONG).show();
+		  Toast.makeText(getApplicationContext(), "denied no evernote account not binded", Toast.LENGTH_LONG).show();
 		  finish();
 		  return;
 		  
@@ -113,7 +105,7 @@ public class SimpleNote extends ParentActivity {
         mEvernoteSession.getClientFactory().createNoteStoreClient().createNote(note, mNoteCreateCallback);
       } catch (TTransportException exception) {
         Log.e(LOGTAG, "Error creating notestore", exception);
-        Toast.makeText(getApplicationContext(), "创建笔记失败", Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), "create failed", Toast.LENGTH_LONG).show();
         removeDialog(DIALOG_PROGRESS);
       }
     } else {

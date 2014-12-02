@@ -13,11 +13,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
-/**
- * dialog中Spinner使用的适配器
- * @author 世欣
- *
- */
 public class MySpinerAdapter extends BaseAdapter {
 	Context context;
 	List<SpinerItemInfo> list;

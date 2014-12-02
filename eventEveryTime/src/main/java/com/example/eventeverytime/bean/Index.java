@@ -4,9 +4,6 @@ package com.example.eventeverytime.bean;
 import android.content.ContentValues;
 import android.database.Cursor;
 
-/**用于存储索引的类
- * Created by gavin on 14-11-15.
- */
 public class Index implements ContentValuesGetable,Containable,CursorCreateable{
     private  int id;
     private int eventId;

@@ -11,6 +11,7 @@ import com.evernote.client.android.EvernoteUtil;
 import com.evernote.client.android.OnClientCallback;
 import com.evernote.edam.type.Note;
 import com.evernote.thrift.transport.TTransportException;
+import com.example.eventeverytime.R;
 import com.example.eventeverytime.bean.Person;
 import com.example.eventeverytime.bean.SpinerItemInfo;
 import com.example.eventeverytime.db.MyDB;
@@ -60,9 +61,9 @@ public void sendSimpleNote(){
 }
 public void sendPersonNote(OnClientCallback<Note> callback){
 	Person person = MyDB.getInstance(context).getPersonById(info.getId());
-	note.setTitle("ÈËÎï"+person.getName());
+	note.setTitle(context.getString(R.string.person)+person.getName());
 	StringBuilder contentBuilder=new StringBuilder();
-	contentBuilder.append("±¸×¢:"+"\n"+person.getNote());
+	contentBuilder.append(context.getString(R.string.note)+":"+"\n"+person.getNote());
 }
 public void sendProjectNote(){
 	

@@ -41,7 +41,7 @@
         <!-- 监听电话短信启动的添加事件Activity -->
         <activity android:name="com.example.eventeverytime.alarm.AddEventActivity" >
             <intent-filter>
-                <action android:name="android.intent.action.SEND" />
+                <action android:name="AddEvent" />
 
                 <category android:name="android.intent.category.DEFAULT" />
 

@@ -47,13 +47,6 @@ public class DialogFactory {
 		this.context = context;
 	}
 
-	/*********************************************************
-	 * 添加人物界面
-	 */
-
-	/**
-	 * 人物对话框
-	 */
 	public void addPersonDialog(String... strings) {
 
 		AlertDialog.Builder builder = new AlertDialog.Builder(context);
@@ -97,12 +90,10 @@ public class DialogFactory {
 		});
 
 		builder.setView(view);
-		// 确定键
-		builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+		builder.setPositiveButton(context.getResources().getString(R.string.confirm), new DialogInterface.OnClickListener() {
 
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
-				// 不允许姓名为空
 				if (nameEditText.getText().toString().trim().length() > 0) {
 					MyDB.getInstance(context).insertPerson(
 							new Person(
@@ -115,12 +106,11 @@ public class DialogFactory {
 									mobilePhoneEditText.getText().toString()
 											.trim()).getContValues());
 				} else {
-					Toast.makeText(context, "请检查输入", Toast.LENGTH_LONG).show();
+					Toast.makeText(context, context.getString(R.string.please_checkout), Toast.LENGTH_LONG).show();
 				}
 			}
 		});
-		// 关闭对话框
-		builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+		builder.setNegativeButton(context.getResources().getString(R.string.cancel), new DialogInterface.OnClickListener() {
 
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
@@ -143,7 +133,7 @@ public class DialogFactory {
 		}
 		final EditText noteEditText = (EditText) view
 				.findViewById(R.id.et_add_company_note);
-		builder.setNegativeButton("取消", new AlertDialog.OnClickListener() {
+		builder.setNegativeButton(context.getResources().getString(R.string.cancel), new AlertDialog.OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				// TODO Auto-generated method stub
@@ -151,7 +141,7 @@ public class DialogFactory {
 				dialog.cancel();
 			}
 		});
-		builder.setPositiveButton("确定", new AlertDialog.OnClickListener() {
+		builder.setPositiveButton(context.getResources().getString(R.string.confirm), new AlertDialog.OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				// TODO Auto-generated method stub
@@ -162,7 +152,7 @@ public class DialogFactory {
 									.trim(), noteEditText.getText().toString()
 									.trim()).getContValues());
 				} else {
-					Toast.makeText(context, "请输入公司名称", Toast.LENGTH_LONG);
+					Toast.makeText(context, context.getString(R.string.please_checkout), Toast.LENGTH_LONG);
 				}
 			}
 		});
@@ -173,19 +163,15 @@ public class DialogFactory {
 	}
 
 	public void addEventDialog(String... strings) {
-		// 所有人物的链表
 		final ArrayList<SpinerItemInfo> selectPersons;
-		// 用于所有待选项目的链表
 		ArrayList<SpinerItemInfo> selectProject = new ArrayList<SpinerItemInfo>();
 
-		// 初始化两张链表
 		MyDB.getInstance(context).load(context);
 		selectPersons = SpinnerTransFormer.getPersonSpinerItemInfos(MyDB
 				.getInstance(context).getAllPersonInfo());
 		selectProject = SpinnerTransFormer.getProjectSpinerItemInfos(MyDB
 				.getInstance(context).getAllProjects());
 
-		// 用于存储多选人物简介对象的链表
 		final HashMap<Integer, SpinerItemInfo> selectedPersonsHashMap = new HashMap<Integer, SpinerItemInfo>();
 		if (strings!=null&&strings.length == 2) {
 
@@ -245,7 +231,7 @@ public class DialogFactory {
 					@Override
 					public void onDateChanged(DatePicker view, int year,
 							int monthOfYear, int dayOfMonth) {
-						date.setYear(year);
+						date.setYear(year-1900);
 						date.setMonth(monthOfYear);
 						date.setDate(dayOfMonth);
 
@@ -261,42 +247,36 @@ public class DialogFactory {
 			}
 		});
 
-		builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+		builder.setNegativeButton(context.getResources().getString(R.string.cancel), new DialogInterface.OnClickListener() {
 			/**
-			 * 取消的监听
 			 */
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				dialog.cancel();
 			}
 		});
-		// 为人物spinner添加内容
 		selectPersonSpinner.setAdapter(new MySpinerAdapter(selectPersons,
 				context));
-		// 为添加人物button添加监听
 		addPersonButton.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
 				if (selectPersons.size() == 0) {
-					Toast.makeText(context, "尚未添加联系人", Toast.LENGTH_SHORT);
+					Toast.makeText(context, context.getString(R.string.noPerson), Toast.LENGTH_SHORT);
 					return;
 				}
-				// 获取Spinner当前选中的item
 				SpinerItemInfo selectInfo = (SpinerItemInfo) selectPersonSpinner
 						.getSelectedItem();
-				// 将item获取的对象添加到哈希表中
 				selectedPersonsHashMap.put(Integer.valueOf(selectInfo.getId()),
 						selectInfo);
 				listAdapter.notifyDataSetChanged();
 			}
 		});
 
-		// 为选择项目的spinner添加内容
 		selectProjectSpinner.setAdapter(new MySpinerAdapter(selectProject,
 				context));
 
-		builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+		builder.setPositiveButton(context.getResources().getString(R.string.confirm), new DialogInterface.OnClickListener() {
 
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
@@ -336,7 +316,7 @@ public class DialogFactory {
 			projectName.setText(strings[0]);
 		}
 
-		builder.setPositiveButton("确认", new DialogInterface.OnClickListener() {
+		builder.setPositiveButton(context.getResources().getString(R.string.confirm), new DialogInterface.OnClickListener() {
 
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
@@ -351,7 +331,7 @@ public class DialogFactory {
 				}
 			}
 		});
-		builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+		builder.setNegativeButton(context.getResources().getString(R.string.cancel), new DialogInterface.OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 
@@ -364,12 +344,10 @@ public class DialogFactory {
 
 	}
 
-	// 设置是否提醒
 	public void setIschecked(boolean ischecked) {
 		this.ischecked = ischecked;
 	}
 
-	// 修改对话框的入口
 	public void modifyDialog(SpinerItemInfo info, Refreshable refreshable) {
 		switch (info.getDataType()) {
 		case PERSON:
@@ -392,29 +370,28 @@ public class DialogFactory {
 
 	}
 
-	// 确认是否删除
 	public void confirmDeleteDialog(SpinerItemInfo info, Refreshable refresh) {
 		final Refreshable tempRefreshable = refresh;
 		final SpinerItemInfo tempInfo = info;
 		AlertDialog.Builder builder = new AlertDialog.Builder(context);
 		TextView textView = new TextView(context);
-		textView.setText("确认删除?");
+		textView.setText(context.getString(R.string.ifDelete));
 		builder.setView(textView);
-		builder.setPositiveButton("确认", new DialogInterface.OnClickListener() {
+		builder.setPositiveButton(context.getString(R.string.confirm), new DialogInterface.OnClickListener() {
 
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				// TODO Auto-generated method stub
 				if (MyDB.getInstance(context).remove(tempInfo)) {
-					Toast.makeText(context, "删除成功", Toast.LENGTH_SHORT);
+					Toast.makeText(context, context.getString(R.string.deleteComplete), Toast.LENGTH_SHORT);
 					tempRefreshable.refresh(null);
 				} else {
-					Toast.makeText(context, "删除失败,尚未解除关联.", Toast.LENGTH_SHORT).show();
+					Toast.makeText(context, context.getString(R.string.deleteFailed), Toast.LENGTH_SHORT).show();
 				}
 			}
 		});
 
-		builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+		builder.setNegativeButton(context.getResources().getString(R.string.cancel), new DialogInterface.OnClickListener() {
 
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
@@ -425,7 +402,6 @@ public class DialogFactory {
 		dialog.show();
 	}
 
-	// 修改人物信息
 	public void modifyPerson(SpinerItemInfo info, Refreshable refreshable) {
 
 		Person person = MyDB.getInstance(context).getPersonById(info.getId());
@@ -475,7 +451,7 @@ public class DialogFactory {
 		});
 
 		builder.setView(view);
-		builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+		builder.setPositiveButton(context.getResources().getString(R.string.confirm), new DialogInterface.OnClickListener() {
 
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
@@ -495,11 +471,11 @@ public class DialogFactory {
 							newId, DataType.PERSON);
 					finalRefreshable.refresh(newInfo);
 				} else {
-					Toast.makeText(context, "请检查输入", Toast.LENGTH_LONG).show();
+					Toast.makeText(context, context.getResources().getString(R.string.please_checkout), Toast.LENGTH_LONG).show();
 				}
 			}
 		});
-		builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+		builder.setNegativeButton(context.getResources().getString(R.string.cancel), new DialogInterface.OnClickListener() {
 
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
@@ -510,7 +486,6 @@ public class DialogFactory {
 		dialog.show();
 	}
 
-	// 修改项目信息
 	public void modifyProjectDialog(final SpinerItemInfo info,
 			final Refreshable refreshable) {
 
@@ -527,7 +502,7 @@ public class DialogFactory {
 		projectName.setText(project.getName());
 		projectNote.setText(project.getNote());
 
-		builder.setPositiveButton("确认", new DialogInterface.OnClickListener() {
+		builder.setPositiveButton(context.getString(R.string.confirm), new DialogInterface.OnClickListener() {
 
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
@@ -542,7 +517,7 @@ public class DialogFactory {
 				}
 			}
 		});
-		builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+		builder.setNegativeButton(context.getResources().getString(R.string.cancel), new DialogInterface.OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 
@@ -555,36 +530,27 @@ public class DialogFactory {
 
 	}
 
-	// 修改事件信息
 	public void modifyEventDialog(final SpinerItemInfo info,
 			final Refreshable refreshable) {
-		// 所有人物的链表
-		Log.i("modify", "event");
 		final Event event = MyDB.getInstance(context)
 				.getEventById(info.getId());
 		ArrayList<SpinerItemInfo> selectPersons = new ArrayList<SpinerItemInfo>();
-		// 用于所有待选项目的链表
 		ArrayList<SpinerItemInfo> selectProject = new ArrayList<SpinerItemInfo>();
 		ArrayList<Person> dbPersons = MyDB.getInstance(context)
 				.getPersonsByEventId(info.getId());
-		// 初始化两张链表
 		MyDB.getInstance(context).load(context);
 		selectPersons = SpinnerTransFormer.getPersonSpinerItemInfos(MyDB
 				.getInstance(context).getAllPersonInfo());
 		selectProject = SpinnerTransFormer.getProjectSpinerItemInfos(MyDB
 				.getInstance(context).getAllProjects());
 
-		// 用于存储多选人物简介对象的链表
 		final HashMap<Integer, SpinerItemInfo> selectedPersonsHashMap = new HashMap<Integer, SpinerItemInfo>();
 		for (Person person : dbPersons) {
-			// 将原有人物信息添加到已选链表数据源中
 			selectedPersonsHashMap.put(person.getId(), new SpinerItemInfo(
 					person.getName(), person.getId(), DataType.PERSON));
 
 		}
-		// 新建builder对象
 		AlertDialog.Builder builder = new AlertDialog.Builder(context);
-		// 初始化视图
 		View view = View.inflate(context, R.layout.add_event_dialog, null);
 		final Date date = new Date();
 		final EditText eventNameEditText = (EditText) view
@@ -627,7 +593,7 @@ public class DialogFactory {
 					@Override
 					public void onDateChanged(DatePicker view, int year,
 							int monthOfYear, int dayOfMonth) {
-						date.setYear(year);
+						date.setYear(year-1900);
 						date.setMonth(monthOfYear);
 						date.setDate(dayOfMonth);
 
@@ -643,38 +609,30 @@ public class DialogFactory {
 			}
 		});
 
-		builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
-			/**
-			 * 取消的监听
-			 */
+		builder.setNegativeButton(context.getResources().getString(R.string.cancel), new DialogInterface.OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				dialog.cancel();
 			}
 		});
-		// 为人物spinner添加内容
 		selectPersonSpinner.setAdapter(new MySpinerAdapter(selectPersons,
 				context));
-		// 为添加人物button添加监听
 		addPersonButton.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
-				// 获取Spinner当前选中的item
 				SpinerItemInfo selectInfo = (SpinerItemInfo) selectPersonSpinner
 						.getSelectedItem();
-				// 将item获取的对象添加到哈希表中
 				selectedPersonsHashMap.put(Integer.valueOf(selectInfo.getId()),
 						selectInfo);
 				listAdapter.notifyDataSetChanged();
 			}
 		});
 
-		// 为项目spinner添加内容
 		selectProjectSpinner.setAdapter(new MySpinerAdapter(selectProject,
 				context));
 
-		builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+		builder.setPositiveButton(context.getResources().getString(R.string.confirm), new DialogInterface.OnClickListener() {
 
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
@@ -694,13 +652,9 @@ public class DialogFactory {
 													.getTime(), ischecked));
 					MyDB.getInstance(context).insertIndexes(info.getId(),
 							selectedPersonsHashMap);
-					MyAlarmManager mam = new MyAlarmManager(context);
-					if(event.isAlarm()){
-						mam.cancelAlarm(event.getId());
-						if(ischecked){
-							mam.sendAlarm(event.getId());
-						}
-					}
+                    if (event.isAlarm()) {
+                        new MyAlarmManager(context).sendAlarm(event.getId());
+                    }
 					refreshable.refresh(new SpinerItemInfo("", info.getId(),
 							DataType.EVENT));
 				} else {
@@ -716,8 +670,7 @@ public class DialogFactory {
 	}
 
 	/**
-	 * 修改公司信息
-	 * 
+	 *
 	 * @param info
 	 * @param refreshable
 	 */
@@ -733,14 +686,14 @@ public class DialogFactory {
 		final EditText noteEditText = (EditText) view
 				.findViewById(R.id.et_add_company_note);
 		noteEditText.setText(company.getNote());
-		builder.setNegativeButton("取消", new AlertDialog.OnClickListener() {
+		builder.setNegativeButton(context.getResources().getString(R.string.cancel), new AlertDialog.OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				// TODO Auto-generated method stub
 
 			}
 		});
-		builder.setPositiveButton("确定", new AlertDialog.OnClickListener() {
+		builder.setPositiveButton(context.getResources().getString(R.string.confirm), new AlertDialog.OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				// TODO Auto-generated method stub
@@ -754,7 +707,7 @@ public class DialogFactory {
 							DataType.COMPANY));
 
 				} else {
-					Toast.makeText(context, "请输入公司名称", Toast.LENGTH_LONG);
+					Toast.makeText(context, context.getString(R.string.please_checkout), Toast.LENGTH_LONG);
 				}
 			}
 		});
@@ -768,7 +721,7 @@ public class DialogFactory {
 		final Context tempContext = context;
 		final String tempMobilePhoneNumber = mobilePhoneNumber.trim();
 		AlertDialog.Builder builder = new Builder(context);
-		builder.setPositiveButton("电话", new DialogInterface.OnClickListener() {
+		builder.setPositiveButton(context.getString(R.string.phone), new DialogInterface.OnClickListener() {
 
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
@@ -776,7 +729,7 @@ public class DialogFactory {
 				Jumper.dial(tempContext, tempMobilePhoneNumber);
 			}
 		});
-		builder.setNegativeButton("短信", new DialogInterface.OnClickListener() {
+		builder.setNegativeButton(context.getString(R.string.message), new DialogInterface.OnClickListener() {
 
 			@Override
 			public void onClick(DialogInterface dialog, int which) {

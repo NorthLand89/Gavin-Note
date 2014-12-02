@@ -15,16 +15,12 @@ import com.example.eventeverytime.alarm.MyAlarmManager;
 import com.example.eventeverytime.bean.*;
 import com.example.eventeverytime.listener.IsDataChangeListener;
 
-/**
- * Created by 世欣 on 14-11-15.
- */
 public class MyDB {
 	Context context;
     private static MyDB myDB = null;
     private static MyOpenHelper openHelper = null;
     private static SQLiteDatabase db = null;
     private static IsDataChangeListener onDataChanedListener;
-    //用于加载数据的链表,现在很少用
     private static ArrayList<Person> allPersonInfo;
     private static ArrayList<Project> allProjectInfo;
     private static ArrayList<Event> allEventInfo;
@@ -50,21 +46,10 @@ public class MyDB {
         return myDB;
     }
 
-/**
- * 添加事件
- * @param values
- * @return
- */
     public int insertEvent(ContentValues values) {
         int row = (int) db.insert("Event", null, values);
         return row;
     }
-    /**
-     * 添加包含索引的完整事项
-     * 哈希表中存有人物信息
-     * @param eventValues
-     * @param personInfos
-     */
     public int insertEvent(ContentValues eventValues,HashMap<Integer,SpinerItemInfo> personInfos){
     	
     	int eventId = insertEvent(eventValues);
@@ -82,7 +67,6 @@ public class MyDB {
         return eventId;
     }
     /**
-     * 根据事件ID和SpinnerInfo哈希表添加索引
      * @param eventId
      * @param personInfos
      */
@@ -93,7 +77,6 @@ public class MyDB {
     		}
     }
     /**
-     * 添加单条索引
      * @param values
      */
     public void insertIndex(ContentValues values) {
@@ -101,14 +84,12 @@ public class MyDB {
         db.insert("Indexx", null, values);
     }
     /**
-     * 设置用于异步操作的监听 已废弃
      * @param listener
      */
     public void setDataChangedListener(IsDataChangeListener listener){
     	onDataChanedListener = listener;
     }
     /**
-     * 添加人物
      * @param values
      * @return
      */
@@ -118,7 +99,6 @@ public class MyDB {
         return newId;
     }
     /**
-     * 回调通知数据更新
      */
     public void notifyDataChanged(){
     	if(onDataChanedListener!=null){
@@ -126,7 +106,6 @@ public class MyDB {
     	}
     }
     /**
-     * 添加项目
      * @param values
      * @return
      */
@@ -136,7 +115,6 @@ public class MyDB {
         return id;
     }
     /**
-     * 添加公司
      * @param values
      * @return
      */
@@ -146,7 +124,6 @@ public class MyDB {
         return id;
     }
     /**
-     * 根据项目获取该项目下所有的事件
      * @param project
      * @return
      */
@@ -169,7 +146,6 @@ public class MyDB {
         return list;
     }
 /**
- * 根据事件ID获取所有人物信息
  * @param id
  * @return
  */
@@ -187,7 +163,6 @@ public class MyDB {
 
     }
 /**
- * 根据ID获取人物对象
  * @param id
  * @return
  */
@@ -200,7 +175,6 @@ public class MyDB {
         return person;
     }
 /**
- * 根据事件ID获取所有参与人对象链表
  * @param id
  * @return
  */
@@ -214,7 +188,6 @@ public class MyDB {
         return Persons;
     }
 /**
- * 根据项目id获取项目对象
  * @param id
  * @return
  */
@@ -227,7 +200,6 @@ public class MyDB {
         return project;
     }
 /**
- * 获取所有事件
  * @return
  */
     public  ArrayList<Event> getAllEvent(){
@@ -242,7 +214,6 @@ public class MyDB {
         return events;
     }
     /**
-     * 通过人物ID 获取数据库中此人参与过的活动ID
      * @param personId
      * @return eventIds
      */
@@ -258,7 +229,6 @@ public class MyDB {
     	return eventIdList;
     }
     /**
-     * 根据人物ID获取所有参与过的时间
      * @param context
      * @param personId
      * @return
@@ -279,7 +249,6 @@ public class MyDB {
     	return events;
     }
     /**
-     * 根据事件ID获取事件对象
      * @param eventId
      * @return
      */
@@ -295,7 +264,6 @@ public class MyDB {
     }
     
     /**
-     * 获取所有人物对象
      * @return
      */
     public ArrayList<Person>getAllPersons(){
@@ -310,7 +278,6 @@ public class MyDB {
     	return persons;
     }
     /**
-     * 获取多有项目对象
      * @return
      */
     public  ArrayList<Project> getAllProjects(){
@@ -324,7 +291,6 @@ public class MyDB {
     	return projects;
     }
     /**
-     * 获取所有公司对象
      * @return
      */
     public ArrayList<Company> getAllCompanies(){
@@ -338,7 +304,6 @@ public class MyDB {
 		return companies;
     }
     /**
-     * 加载 基本废弃
      * @param context
      * @return
      */
@@ -352,7 +317,6 @@ public class MyDB {
     	return this;
     }
     /**
-     * 获取所有索引
      * @return
      */
     public ArrayList<Index> getAllIndex(){
@@ -385,7 +349,6 @@ public class MyDB {
 	
 	
 	/**
-	 * 以下为遍历链表的查询函数
 	 */
 	
 	public Company getCompanyByPerson(Person person){
@@ -420,7 +383,6 @@ public class MyDB {
 		
 	}
 	/**
-	 * 修改人物信息
 	 * @param oldId
 	 * @param person
 	 * @return
@@ -433,7 +395,6 @@ public class MyDB {
 		return oldId;
 	}
 	/**
-	 * 修改事件信息
 	 * @param event
 	 */
 	public void modifyEvent(Event event){
@@ -443,7 +404,6 @@ public class MyDB {
 		db.replace("Event", null, event.getFullContentValues());
 }
 	/**
-	 * 修改项目信息
 	 * @param project
 	 */
 	public void modifyProject(Project project){
@@ -451,7 +411,6 @@ public class MyDB {
 		Log.i("go","go");
 	}
 	/**
-	 * 修改公司信息
 	 * @param company
 	 */
 	public void modifyCompany(Company company){
@@ -459,7 +418,6 @@ public class MyDB {
 		
 	}
 	/**
-	 * 根据公司ID获取相关人物信息
 	 * @param id
 	 * @return
 	 */
@@ -483,7 +441,6 @@ public class MyDB {
 		return persons;
 	}
 	/**
-	 * 根据人物ID删除人物
 	 * @param id
 	 */
 	public void removePersonById(int id){
@@ -491,28 +448,24 @@ public class MyDB {
 		removeIndexByPersonId(id);
 	}
 	/**
-	 * 根据项目ID删除项目
 	 * @param id
 	 */
 	public void removeProjectById(int id){
 		db.delete("Project", "id=?",new String[]{id+""});
 	}
 	/**
-	 * 根据人物ID删除索引
 	 * @param id
 	 */
 	public void removeIndexByPersonId(int id){
 		db.delete("Indexx", "personId=?", new String[]{id+""});
 	}
 	/**
-	 * 根据事件ID删除索引
 	 * @param id
 	 */
 	public void removeIndexByEventId(int id){
 		db.delete("Indexx", "eventId=?", new String[]{id+""});
 	}
 	/**
-	 * 删除事件
 	 * @param id
 	 */
 	public void removeEventById(int id){
@@ -521,8 +474,6 @@ public class MyDB {
 		removeIndexByEventId(id);
 	}
 	/**
-	 * 删除公司
-	 * 如果还有人物与该公司关联,则无法删除
 	 * @param id
 	 * @return
 	 */
@@ -536,7 +487,6 @@ public class MyDB {
 		}
 	}
 	/**
-	 * 删除的入口 根据DataType选择删除对象
 	 * @param info
 	 * @return
 	 */
@@ -558,7 +508,6 @@ public class MyDB {
 		}
 	}
 	/**
-	 * 根据人物手机号码获取人物的SpinerInfo信息
 	 * @param number
 	 * @return
 	 */

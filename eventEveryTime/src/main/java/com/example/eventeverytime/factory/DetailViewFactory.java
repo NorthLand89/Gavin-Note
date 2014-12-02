@@ -31,9 +31,6 @@ import com.example.eventeverytime.util.Jumper;
 import com.example.eventeverytime.util.Mbinder;
 import com.example.eventeverytime.util.TimeUtility;
 /**
- * 详情界面分为两部分,对象详情和相关对象链表
- * 这是对象详情的viewFactory
- * @author 世欣
  *
  */
 public class DetailViewFactory {
@@ -52,8 +49,6 @@ public DetailViewFactory(SpinerItemInfo info,Context context){
 	this.info=info;
 }
 /**
- * 根据穿入info的DataType判断生成哪种View
- * @return
  */
 	public View getView(){
 		switch (info.getDataType()) {
@@ -74,8 +69,6 @@ public DetailViewFactory(SpinerItemInfo info,Context context){
 	}
 	
 	/**
-	 * 生成人物详情视图
-	 * @return
 	 */
 	public  View getPersonDetailView(){
 		list= MyDB.getInstance(context).getEventsByPersonId(context, info.getId());
@@ -144,13 +137,10 @@ public DetailViewFactory(SpinerItemInfo info,Context context){
 		return view;
 	}
 	/**
-	 * 生成事件详情
-	 * @return
 	 */
 	public View getEventDetailView(){
 		View child=View.inflate(context, R.layout.detail_event, null);
 		int half;
-		//准备数据
 		Event event = MyDB.getInstance(context).getEventById(info.getId());
 		MyDB myDB = MyDB.getInstance(context);
 		myDB.load(context);
@@ -168,7 +158,6 @@ public DetailViewFactory(SpinerItemInfo info,Context context){
 				column1.add(new SpinerItemInfo(persons.get(i).getName(),persons.get(i).getId(),DataType.PERSON));
 			}
 		}
-	//找到视图
 		ListView nameListView1=(ListView) child.findViewById(R.id.listView1);
 		ListView nameListView2=(ListView) child.findViewById(R.id.listView2);
 		TextView eventTextView=(TextView) child.findViewById(R.id.tv_detail_event_name);
@@ -187,7 +176,6 @@ public DetailViewFactory(SpinerItemInfo info,Context context){
 			lineImageView.setVisibility(ImageView.INVISIBLE);
 		}
 		
-	//设置视图
 		eventTextView.setText(event.getName());
 		final Project project = MyDB.getInstance(context).getProjectById(event.getProjectId());
 		projectTextView.setText(project.getName());
@@ -208,7 +196,6 @@ public DetailViewFactory(SpinerItemInfo info,Context context){
 		return view;
 	}
 	/**
-	 * 生成项目详情
 	 * @return
 	 */
 	public View getProjectDetailView(){
@@ -227,7 +214,6 @@ public DetailViewFactory(SpinerItemInfo info,Context context){
 		return view;
 	}
 	/**
-	 * 生成公司详情
 	 * @return
 	 */
 	public View getCompanyDetailView(){
@@ -248,7 +234,6 @@ public DetailViewFactory(SpinerItemInfo info,Context context){
 	}
 	
 	/**
-	 * 绑定事件item的监听
 	 * @param context
 	 * @param target
 	 * @param view
@@ -269,8 +254,6 @@ public DetailViewFactory(SpinerItemInfo info,Context context){
 	}
 	
 	/**
-	 * 事件listView的适配器
-	 * @author 世欣
 	 *
 	 */
 	class juniorEventAdapter extends BaseAdapter{
@@ -307,8 +290,6 @@ public DetailViewFactory(SpinerItemInfo info,Context context){
 		
 	}
 	/**
-	 * 人名listView的适配器
-	 * @author 世欣
 	 *
 	 */
 	class NameListAdapter extends BaseAdapter{
@@ -354,10 +335,6 @@ public DetailViewFactory(SpinerItemInfo info,Context context){
 	}
 	
 	/**
-	 * 设置人名listView的点击事件
-	 * 点击从HashMap中移除
-	 * @author 世欣
-	 *
 	 */
 	class NameOnClickListener implements OnClickListener{
 		Context context;

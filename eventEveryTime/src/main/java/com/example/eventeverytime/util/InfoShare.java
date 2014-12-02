@@ -4,6 +4,7 @@ import java.security.PublicKey;
 import java.util.ArrayList;
 import java.util.Collections;
 
+import com.example.eventeverytime.R;
 import com.example.eventeverytime.bean.Company;
 import com.example.eventeverytime.bean.Event;
 import com.example.eventeverytime.bean.Person;
@@ -53,23 +54,23 @@ public String handlePersonInfo(){
 	shareBuiler.addSeparator();
 	shareBuiler.addLine(person.getNote());
 	if(person.getMobilePhone()!=null){
-	shareBuiler.addLine("手机:  "+person.getMobilePhone());
+	shareBuiler.addLine(context.getString(R.string.cellphone)+":  "+person.getMobilePhone());
 	}
 	if(person.getPhone()!=null){
-	shareBuiler.addLine("固话:  "+person.getPhone());
+	shareBuiler.addLine(context.getString(R.string.phone)+":  "+person.getPhone());
 	}
 	if(person.getEmail()!=null){
-	shareBuiler.addLine("邮箱:"+person.getEmail());
+	shareBuiler.addLine(context.getString(R.string.email)+":"+person.getEmail());
 	}
 	shareBuiler.addSeparator();
 	for(int i =0;i<events.size();i++){
 		Event event = events.get(i);
 		ArrayList<Person>persons=MyDB.getInstance(context).getPersonsByEventId(info.getId());
-		shareBuiler.addLine("事件"+event.getName());
+		shareBuiler.addLine(context.getString(R.string.event)+":"+event.getName());
 		shareBuiler.addLine(event.getNote());
-		shareBuiler.addLine("时间"+TimeUtility.longToString(event.getTime()));
+		shareBuiler.addLine(context.getString(R.string.time)+TimeUtility.longToString(event.getTime()));
 		shareBuiler.addBlankLine();
-		shareBuiler.addLine("参与人:");
+		shareBuiler.addLine(context.getString(R.string.participater)+":");
 		shareBuiler.addSeparator();
 		for(int j = 0;j<persons.size();j++){
 			shareBuiler.addLine(persons.get(j).getName());
@@ -84,9 +85,9 @@ public String handleProjectInfo(){
 	Project project = MyDB.getInstance(context).getProjectById(info.getId());
 	ArrayList<Event>events = MyDB.getInstance(context).getEventsByProject(project);
 	Collections.sort(events);
-	shareBuiler.addLine("项目名"+project.getName());
+	shareBuiler.addLine(context.getString(R.string.project)+":"+project.getName());
 	shareBuiler.addSeparator();
-	shareBuiler.addLine("备注"+project.getNote());
+	shareBuiler.addLine(context.getString(R.string.note)+":"+project.getNote());
 	shareBuiler.addSeparator();
 	shareBuiler.addBlankLine();
 	for(int i = 0;i<events.size();i++){
@@ -94,9 +95,9 @@ public String handleProjectInfo(){
 		ArrayList<Person>persons=MyDB.getInstance(context).getPersonsByEventId(event.getId());
 		shareBuiler.addLine(event.getName());
 		shareBuiler.addLine(event.getNote());
-		shareBuiler.addLine("时间"+TimeUtility.longToString(event.getTime()));
+		shareBuiler.addLine(context.getString(R.string.time)+":"+TimeUtility.longToString(event.getTime()));
 		shareBuiler.addBlankLine();
-		shareBuiler.addLine("参与人:");
+		shareBuiler.addLine(context.getString(R.string.participater)+":");
 		shareBuiler.addSeparator();
 		for(int j = 0;j<persons.size();j++){
 			shareBuiler.addLine(persons.get(j).getName());
@@ -114,7 +115,7 @@ public String handleEventInfo(){
 	shareBuiler.addLine(event.getNote());
 	shareBuiler.addSeparator();
 	shareBuiler.addBlankLine();
-	shareBuiler.addLine("参与人:");
+	shareBuiler.addLine(context.getString(R.string.participater)+":");
 	shareBuiler.addSeparator();
 	for(int i = 0;i<persons.size();i++){
 		shareBuiler.addLine(persons.get(i).getName());
@@ -128,7 +129,7 @@ public String handleCompanyInfo(){
 	shareBuiler.addSeparator();
 	shareBuiler.addLine(company.getName());
 	shareBuiler.addSeparator();
-	shareBuiler.addLine("相关人物");
+	shareBuiler.addLine(context.getString(R.string.participater));
 	shareBuiler.addBlankLine();
 	for(int i=0;i<persons.size();i++){
 		shareBuiler.addLine(persons.get(i).getName());

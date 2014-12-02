@@ -4,11 +4,13 @@ import com.example.eventeverytime.R;
 import com.example.eventeverytime.factory.DialogFactory;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.AttributeSet;
+import android.view.View;
+
 /**
- * 被系统监听启动的添加事件Activity
- * @author 世欣
  *
  */
 public class AddEventActivity extends Activity {
@@ -31,9 +33,15 @@ protected void onCreate(Bundle savedInstanceState) {
 	}
 	new DialogFactory(AddEventActivity.this).addEventDialog(number,note);
 }
-@Override
+
+    @Override
+    public View onCreateView(String name, Context context, AttributeSet attrs) {
+        return super.onCreateView(name, context, attrs);
+    }
+
+    @Override
 protected void onResume() {
 	// TODO Auto-generated method stub
-	finish();
+    super.onResume();
 }
 }

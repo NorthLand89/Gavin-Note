@@ -18,11 +18,6 @@ import com.example.eventeverytime.bean.DataType;
 import com.example.eventeverytime.bean.Event;
 import com.example.eventeverytime.bean.SpinerItemInfo;
 import com.example.eventeverytime.factory.ItemFactory;
-/**
- * 用于事件列表的适配器
- * @author 世欣
- *
- */
 public class EventListAdapter extends BaseAdapter{
 	
 	Context context;

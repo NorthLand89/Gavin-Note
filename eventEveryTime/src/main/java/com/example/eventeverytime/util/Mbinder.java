@@ -9,7 +9,6 @@ import com.example.eventeverytime.bean.SpinerItemInfo;
 
 public class Mbinder {
 	/**
-	 * 专门用于绑定可跳转对象的监听器绑定工具
 	 * @param context
 	 * @param target
 	 * @param view

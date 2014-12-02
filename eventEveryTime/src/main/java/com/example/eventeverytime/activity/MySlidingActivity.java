@@ -19,9 +19,7 @@ import com.example.eventeverytime.listener.IsDataChangeListener;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.jeremyfeinstein.slidingmenu.lib.app.SlidingActivity;
 public class MySlidingActivity extends SlidingActivity implements Refreshable{
-	protected EvernoteSession mEvernoteSession;
 
-	//controlFragment接口,用于菜单碎片和主碎片通信
 	ControlFragment controller;
 	MainFragment mainFragment;
 	MenuFragment menuFragment;
@@ -31,9 +29,7 @@ public class MySlidingActivity extends SlidingActivity implements Refreshable{
 		MyDB myDB = MyDB.getInstance(getApplicationContext());
 		
 		actionBar = getActionBar();
-		//初始化主界面
 		mainFragment = new MainFragment();
-		//初始化菜单界面
 		menuFragment = new MenuFragment(new ControlFragment() {
 			
 			@Override
@@ -43,16 +39,16 @@ public class MySlidingActivity extends SlidingActivity implements Refreshable{
 				sm.showContent();
 				switch (type) {
 				case PERSON:
-					actionBar.setTitle("人物列表");
+					actionBar.setTitle(getString(R.string.person));
 					break;
 				case PROJECT:
-					actionBar.setTitle("项目列表");
+					actionBar.setTitle(getResources().getString(R.string.project));
 					break;
 				case EVENT:
-					actionBar.setTitle("事件列表");
+					actionBar.setTitle(getResources().getString(R.string.event));
 					break;
 				case COMPANY:
-					actionBar.setTitle("公司列表");
+					actionBar.setTitle(getResources().getString(R.string.company));
 					break;
 
 				default:
@@ -66,8 +62,7 @@ public class MySlidingActivity extends SlidingActivity implements Refreshable{
 				
 			}
 		});
-		//通过接口将两个碎片链接起来
-		
+
 		dataChangeListener =new IsDataChangeListener() {
 			
 			@Override
@@ -86,7 +81,6 @@ public class MySlidingActivity extends SlidingActivity implements Refreshable{
 		
 		
 		/**
-		 * 测试功能
 		 */
 		
 		
@@ -98,8 +92,7 @@ public class MySlidingActivity extends SlidingActivity implements Refreshable{
 		
 		init();
 		setContentView(R.layout.main_frame);
-		//设置标题
-		
+
 		
 		
 		setBehindContentView(R.layout.menu_frame);
@@ -112,24 +105,19 @@ public class MySlidingActivity extends SlidingActivity implements Refreshable{
 	        sm.setTouchModeAbove(SlidingMenu.TOUCHMODE_MARGIN);
 	        setSlidingActionBarEnabled(false);
 		
-		//获得转换器
 		FragmentTransaction transaction = getFragmentManager().beginTransaction();
-		//获取menufragment
-		
-		//开始转换
+
 		transaction.replace(R.id.menu, menuFragment);
 		transaction.replace(R.id.main, mainFragment);
 		transaction.commit();
 		
-		//设置滑动菜单样式
-		
+
 
 	}
 	@Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
         case android.R.id.home:
-            //自动判断是打开还是关闭
             toggle();
 
             return true;

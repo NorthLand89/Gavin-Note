@@ -2,6 +2,7 @@ package com.example.eventeverytime.listadapters;
 
 import java.util.ArrayList;
 
+import com.example.eventeverytime.R;
 import com.example.eventeverytime.bean.Company;
 import com.example.eventeverytime.bean.DataType;
 import com.example.eventeverytime.bean.Event;
@@ -17,11 +18,6 @@ import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.ViewSwitcher.ViewFactory;
 
-/**
- * 用于搜索视图可扩展列表的适配器
- * @author 世欣
- *
- */
 public class MyExpandableListAdapter extends BaseExpandableListAdapter{
 	ArrayList<Person>persons;
 	ArrayList<Event>events;
@@ -100,13 +96,13 @@ public class MyExpandableListAdapter extends BaseExpandableListAdapter{
 			View convertView, ViewGroup parent) {
 		switch (groupPosition) {
 		case 0:
-			return ItemFactory.getGroupTitleView(context, "      人物", convertView);
+			return ItemFactory.getGroupTitleView(context, "      "+context.getString(R.string.person), convertView);
 		case 1:
-			return ItemFactory.getGroupTitleView(context, "      事件", convertView);
+			return ItemFactory.getGroupTitleView(context, "      "+context.getString(R.string.event), convertView);
 		case 2:
-			return ItemFactory.getGroupTitleView(context, "      項目", convertView);
+			return ItemFactory.getGroupTitleView(context, "      "+context.getString(R.string.project), convertView);
 		case 3:
-			return ItemFactory.getGroupTitleView(context, "      公司", convertView);
+			return ItemFactory.getGroupTitleView(context, "      "+context.getString(R.string.company), convertView);
 
 		default:
 			break;

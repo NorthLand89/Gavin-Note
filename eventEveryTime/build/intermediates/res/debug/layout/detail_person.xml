@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:text="人名"
         android:layout_gravity="center_horizontal" 
-        android:textSize="50dp"/>
+        android:textSize="40sp"/>
 
     <ImageView
         android:id="@+id/ImageView01"
@@ -27,41 +27,41 @@
          <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
             android:text="手机:"
             android:layout_weight="1" 
-            android:textSize="25dp"
+            android:textSize="25sp"
         android:textColor="#000000"/>
         
         <TextView
             android:id="@+id/tv_detail_person_cellphone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
             android:text="手机"
             android:layout_weight="5" 
-        android:textSize="25dp"
+        android:textSize="25sp"
         android:textColor="#000000"/>
-   <TextView
+    </TableRow>
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+    <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
             android:text="固话:"
             android:layout_weight="1" 
-        android:textSize="25dp"
+        android:textSize="25sp"
         android:textColor="#000000"/>
         <TextView
             android:id="@+id/tv_detail_person_phone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
             android:text="固定电话"
             android:layout_weight="5"
-        android:textSize="25dp"
+        android:textSize="25sp"
         android:textColor="#000000" />
-        
+
     </TableRow>
-     
       
         
 
@@ -72,36 +72,36 @@
    <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
             android:text="公司:"
             android:layout_weight="1" 
-        android:textSize="25dp"
+        android:textSize="25sp"
         android:textColor="#000000"/>
         <TextView
             android:id="@+id/tv_detail_person_company"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
             android:text="公司"
             android:layout_weight="1" 
-        android:textSize="25dp"
+        android:textSize="25sp"
         android:textColor="#000000"/>
+    </TableRow>
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
            <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
             android:text="职位:"
             android:layout_weight="1" 
-        android:textSize="25dp"
+        android:textSize="25sp"
         android:textColor="#000000"/>
         <TextView
             android:id="@+id/tv_detail_person_position"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
             android:text="职位"
             android:layout_weight="1" 
-        android:textSize="25dp"
+        android:textSize="25sp"
         android:textColor="#000000"/>
     </TableRow>
 	<TableRow 
@@ -112,18 +112,16 @@
 	       <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
             android:text="邮箱:"
-        android:textSize="25dp"
+        android:textSize="25sp"
             android:layout_weight="1" 
         android:textColor="#000000"/>
 	         <TextView
             android:id="@+id/tv_detail_person_email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:text="邮箱" 
-        android:textSize="25dp"
+            android:text="邮箱"
+        android:textSize="25sp"
             android:layout_weight="10"
         android:textColor="#000000"/>
 	</TableRow>
@@ -139,7 +137,7 @@
         android:id="@+id/tv_detail_person_note"
         android:layout_width="70dp"
         android:layout_height="wrap_content"
-        android:textSize="25dp"
+        android:textSize="20sp"
         android:textColor="#000000"/>
 
 </TableLayout><!-- From: file:/home/gavin/AndroidStudioProjects/EventEveryTime/eventEveryTime/src/main/res/layout/detail_person.xml -->

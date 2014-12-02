@@ -6,13 +6,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 /**
- * 用于提供界面跳转的工具类
- * @author 世欣
  *
  */
 public class Jumper {
 /**
- * 跳转到拨号
  * @param context
  * @param address
  */
@@ -25,7 +22,6 @@ public class Jumper {
         context.startActivity(intent);
 	}
 	/**
-	 * 跳转到短信
 	 * @param context
 	 * @param address
 	 */
@@ -37,20 +33,15 @@ public class Jumper {
         context.startActivity(intent); 
 	}
 	/**
-	 * 跳转到发送邮件
 	 * @param context
 	 * @param address
 	 */
 	public static void email(Context context,String address){
 		Intent intent = new Intent(android.content.Intent.ACTION_SEND); 
-        // 文本格式 
-        intent.setType("text/plain"); 
-        // 对方邮件地址 
-        intent.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{address}); 
-        // 标题内容 
-        intent.putExtra(android.content.Intent.EXTRA_SUBJECT, ""); 
-        // 邮件文本内容 
-        intent .putExtra(android.content.Intent.EXTRA_TEXT,""); 
+        intent.setType("text/plain");
+        intent.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{address});
+        intent.putExtra(android.content.Intent.EXTRA_SUBJECT, "");
+        intent .putExtra(android.content.Intent.EXTRA_TEXT,"");
 		context.startActivity(Intent.createChooser(intent,"Choose Email Client")); 
 
 

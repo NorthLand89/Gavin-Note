@@ -30,15 +30,10 @@ import com.example.eventeverytime.listadapters.ProjectListAdapter;
 
 public class MainFragment extends Fragment implements ControlFragment ,Refreshable{
 
-	// 事件数据源
 	ArrayList<Event> events;
-	// 人物数据源
 	ArrayList<Person> persons;
-	// 项目数据源
 	ArrayList<Project> projects;
-	//公司数据源
 	ArrayList<Company>companies;
-	// 数据库
 	MyDB myDB;
 	BaseAdapter adapter;
 	ListView listView;
@@ -74,7 +69,7 @@ public class MainFragment extends Fragment implements ControlFragment ,Refreshab
 
 	public MainFragment(DataType type) {
 		this.type=type;
-		
+
 	}
 	
 	@Override

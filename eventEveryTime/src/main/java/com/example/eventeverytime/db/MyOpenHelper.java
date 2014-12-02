@@ -10,7 +10,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 /**
- * 用于创建数据库和获取读写对象
  * Created by gavin on 14-11-15.
  */
 public class MyOpenHelper extends SQLiteOpenHelper {
@@ -36,10 +35,8 @@ public class MyOpenHelper extends SQLiteOpenHelper {
         db.execSQL(CREATE_INDEX);
         db.execSQL(CREATE_PERSON);
         db.execSQL(CREATE_PROJECT);
-        //添加默认项目
-    	db.insert("Project", null, new Project(0, "未归档", "").getFullContentValues());
-    	//添加默认公司
-    	db.insert("Company", null, new Company(0, "未归档", "默认选项").getFullContentValues());
+    	db.insert("Project", null, new Project(0, "Unfiled", "").getFullContentValues());
+    	db.insert("Company", null, new Company(0, "Unfiled", "").getFullContentValues());
     }
 
     @Override

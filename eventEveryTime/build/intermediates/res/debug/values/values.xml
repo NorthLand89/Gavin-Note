@@ -19,6 +19,16 @@
     <string name="action_settings">Settings</string>
     <string name="add">添加</string>
     <string name="app_name">大猫记事</string>
+    <string name="cancel">取消</string>
+    <string name="cancelEvent">取消事件</string>
+    <string name="cellphone">手机</string>
+    <string name="company">公司</string>
+    <string name="confirm">确认</string>
+    <string name="deleteComplete">删除成功</string>
+    <string name="deleteFailed">删除失败，尚未解除关联</string>
+    <string name="doing">进行中</string>
+    <string name="email">邮箱</string>
+    <string name="error">数据错误</string>
     <!-- From: file:/home/gavin/AndroidStudioProjects/EventEveryTime/eventEveryTime/build/intermediates/exploded-aar/EventEveryTime/library/unspecified/res/values/values.xml -->
     <eat-comment/>
     <string name="esdk__err_api_setup">Error intializing Evernote API</string>
@@ -30,7 +40,21 @@
     <string name="esdk__loading">Loading...</string>
     <!-- From: file:/home/gavin/AndroidStudioProjects/EventEveryTime/eventEveryTime/src/main/res/values/strings.xml -->
     <eat-comment/>
+    <string name="event">事件</string>
+    <string name="eventremind">事件提醒</string>
     <string name="hello_world">Hello world!</string>
+    <string name="ifDelete">确认删除？</string>
+    <string name="inputKeyword">请输入关键字</string>
+    <string name="message">短信</string>
+    <string name="noPerson">尚未添加联系人</string>
+    <string name="note">备注</string>
+    <string name="participater">参与人</string>
+    <string name="person">人物</string>
+    <string name="phone">电话</string>
+    <string name="please_checkout">请检查输入</string>
+    <string name="project">项目</string>
+    <string name="time">时间</string>
+    <string name="untitled">未归档</string>
     <!-- From: file:/home/gavin/AndroidStudioProjects/EventEveryTime/eventEveryTime/src/main/res/values/styles.xml -->
     <eat-comment/>
     <style name="AppBaseTheme" parent="android:Theme.Light">

@@ -4,10 +4,6 @@ package com.example.eventeverytime.bean;
 import android.content.ContentValues;
 import android.database.Cursor;
 
-/**
- * 用于存储人物的类
- * Created by gavin on 14-11-15.
- */
 public class Person implements ContentValuesGetable,Containable,CursorCreateable{
     @Override
 	public int hashCode() {

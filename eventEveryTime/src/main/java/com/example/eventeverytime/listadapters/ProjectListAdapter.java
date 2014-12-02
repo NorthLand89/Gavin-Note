@@ -13,11 +13,6 @@ import android.os.Binder;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-/**
- * 用于显示项目列表的适配器
- * @author 世欣
- *
- */
 public class ProjectListAdapter extends BaseAdapter {
 ArrayList<Project>projects;
 Context context;
@@ -45,9 +40,7 @@ Context context;
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
-		//从item工厂中获取convertView;
 		convertView=ItemFactory.getProjectItemView(context, projects.get(position),convertView);
-		//绑定监听
 		Mbinder.bindOnClick(context,
 							new SpinerItemInfo(projects.get(position).getName(),
 												projects.get(position).getId(), 

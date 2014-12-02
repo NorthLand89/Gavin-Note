@@ -11,10 +11,7 @@ import android.content.Intent;
 import android.widget.Toast;
 
 /**
- * 用于管理闹钟的类 添加闹钟 删除闹钟
- * 
- * @author 世欣
- * 
+ *
  */
 public class MyAlarmManager {
 	String ACTION_RECEIVE_MESSAGE;
@@ -24,7 +21,6 @@ public class MyAlarmManager {
 		this.context = context;
 	}
 /**
- * 将事件ID作为参数添加闹钟
  * @param id
  */
 	public void sendAlarm(int id) {
@@ -40,7 +36,6 @@ public class MyAlarmManager {
 		am.set(AlarmManager.RTC_WAKEUP, time, pi);
 	}
 /**
- * 取消id事件的闹钟
  * @param id
  */
 	public MyAlarmManager cancelAlarm(int id) {

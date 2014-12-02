@@ -126,14 +126,13 @@ public class MenuFragment extends Fragment {
 						mEvernoteSession.logOut(getActivity());
 					} catch (InvalidAuthenticationException e) {
 						// TODO Auto-generated catch block
-						Toast.makeText(getActivity(), "取消授权失败", Toast.LENGTH_LONG);
+						Toast.makeText(getActivity(), "cancel autorise failed", Toast.LENGTH_LONG);
 					}
 				}
 			}
 		});
 		Setting.getInstance(getActivity()).initSwitch(phoneSwitch, messageSwitch, reminderSwitch);
 	}
-	//菜单的监听器
 	class MenuOnClickListener implements OnClickListener{
 
 		@Override
@@ -198,10 +197,9 @@ public class MenuFragment extends Fragment {
 			intent.putExtra("keyWord", keyWord);
 			startActivity(intent);
 		}else {
-			Toast.makeText(getActivity(), "请输入关键字", Toast.LENGTH_SHORT);
+			Toast.makeText(getActivity(), getActivity().getString(R.string.inputKeyword), Toast.LENGTH_SHORT);
 		}
 	}
-	//详细添加按钮的隐藏与显示
 	public void switchButtonStatu(){
 		if(addCompanyButton.getVisibility()==Button.VISIBLE){
 			addCompanyButton.setVisibility(Button.GONE);

@@ -28,9 +28,6 @@ import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 /**
- * 闹钟事件唤醒的Activity
- * 用于显示dialog并提供跳转
- * @author 世欣
  *
  */
 public class AlarmActivity extends Activity{
@@ -52,11 +49,10 @@ protected void onCreate(Bundle savedInstanceState) {
 //	new MyAlarmManager(getApplicationContext()).cancelAlarm(id).resetDBAlarm(id);
 }
 /**
- * 显示对话框
  */
 public void showDialog(){
 	AlertDialog.Builder builder = new AlertDialog.Builder(AlarmActivity.this);
-	builder.setTitle("事件提醒");
+	builder.setTitle(getString(R.string.eventremind));
 	View view = View.inflate(getApplicationContext(), R.layout.alarm_dialog, null);
 	TextView title = (TextView) view.findViewById(R.id.tv_alarm_title);
 	TextView noteTextView = (TextView) view.findViewById(R.id.tv_alarm_note);
@@ -81,7 +77,7 @@ public void showDialog(){
 	});
 	personsListView.setAdapter(new MyAlertListViewAdapter(getApplicationContext(), persons));
 	builder.setView(view);
-	builder.setPositiveButton("进行中", new DialogInterface.OnClickListener() {
+	builder.setPositiveButton(getString(R.string.doing), new DialogInterface.OnClickListener() {
 		
 		@Override
 		public void onClick(DialogInterface dialog, int which) {
@@ -89,7 +85,7 @@ public void showDialog(){
 			
 		}
 	});
-	builder.setNegativeButton("不干了", new DialogInterface.OnClickListener() {
+	builder.setNegativeButton(getString(R.string.cancelEvent), new DialogInterface.OnClickListener() {
 		
 		@Override
 		public void onClick(DialogInterface dialog, int which) {

@@ -37,13 +37,7 @@ public class ItemFactory {
 	
 	private static TextView companyNameTextView;
 	
-	/**
-	 * 人物列表的item视图生产器
-	 * @param context	传入上下文 用于创建view
-	 * @param person	穿入person 用于获取person的信息为textView 赋值
-	 * @param commandable	穿入命令接口，使该视图能添加点击事件
-	 * @return view			生产完毕的视图
-	 */
+
 	public static View getPersonItemView(final Context context,Person person,View convertView){
 		if(convertView==null){
 			convertView = View.inflate(context, R.layout.item_person, null);
@@ -111,17 +105,21 @@ public class ItemFactory {
 		eventItemProjectTextView.setText(project.getName());
 		eventItemNameTextView.setText(event.getName());
 		eventItemTimeTextView.setText(TimeUtility.LongStringToDateString(event.getTime()+""));
-		
-		if(list.size()==1){
+
+        firstGuyTextView.setText("");
+        secondGuyTextView.setText("");
+        thirdGuyTextView.setText("");
+        forthGuyTextView.setText("");
+		if(list.size()>0){
 			firstGuyTextView.setText(list.get(0).getName()+"  ");
 		}
-		if(list.size()==2){
+		if(list.size()>1){
 			secondGuyTextView.setText(list.get(1).getName()+"  ");
 		}
-		if(list.size()==3){
+		if(list.size()>2){
 			thirdGuyTextView.setText(list.get(2).getName()+"  ");
 		}
-		if(list.size()==4){
+		if(list.size()>3){
 			forthGuyTextView.setText("...");
 		}
 		

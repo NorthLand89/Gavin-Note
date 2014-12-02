@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.util.Log;
 
 import com.evernote.edam.type.Note;
+import com.example.eventeverytime.R;
 import com.example.eventeverytime.bean.Company;
 import com.example.eventeverytime.bean.Event;
 import com.example.eventeverytime.bean.Person;
@@ -17,11 +18,7 @@ import com.example.eventeverytime.bean.SpinerItemInfo;
 import com.example.eventeverytime.db.MyDB;
 import com.example.eventeverytime.util.NoteBuilder;
 import com.example.eventeverytime.util.TimeUtility;
-/**
- * ”√”⁄¥” ˝æ›ø‚∂¡»°–≈œ¢≤¢¥¥Ω®∑¢ÀÕ± º«µƒ¿‡
- * @author  ¿–¿
- *
- */
+
 public class NoteFactory {
 	Context context;
 	SpinerItemInfo info;
@@ -44,7 +41,7 @@ public NoteFactory(Context context,SpinerItemInfo info){
 
 
 		default:
-			return new NoteBuilder(" ˝æ›¥ÌŒÛ").getNote();
+			return new NoteBuilder(context.getString(R.string.error)).getNote();
 		}
 	}
 	
@@ -52,7 +49,6 @@ public NoteFactory(Context context,SpinerItemInfo info){
 		Person person = MyDB.getInstance(context).getPersonById(info.getId());
 		ArrayList<Event> events = MyDB.getInstance(context).getEventsByPersonId(context, person.getId());
 		NoteBuilder noteBuilder =new NoteBuilder(person.getName()) ;
-		Log.i("nameee",person.getName());
 		noteBuilder.addSeparator();
 		noteBuilder.addLine(person.getNote());
 		noteBuilder.addSeparator();
@@ -61,9 +57,9 @@ public NoteFactory(Context context,SpinerItemInfo info){
 			ArrayList<Person>persons=MyDB.getInstance(context).getPersonsByEventId(info.getId());
 			
 			noteBuilder.addLine(event.getNote());
-			noteBuilder.addLine(" ±º‰"+TimeUtility.longToString(event.getTime()));
+			noteBuilder.addLine(context.getString(R.string.time)+"Ôºö"+TimeUtility.longToString(event.getTime()));
 			noteBuilder.addBlankLine();
-			noteBuilder.addLine("≤Œ”Î»À:");
+			noteBuilder.addLine(context.getString(R.string.participater)+":");
 			noteBuilder.addSeparator();
 			for(int j = 0;j<persons.size();j++){
 				noteBuilder.addLine(persons.get(j).getName());
@@ -78,7 +74,7 @@ public NoteFactory(Context context,SpinerItemInfo info){
 		Project project = MyDB.getInstance(context).getProjectById(info.getId());
 		ArrayList<Event>events = MyDB.getInstance(context).getEventsByProject(project);
 		Collections.sort(events);
-		NoteBuilder noteBuilder = new NoteBuilder("œÓƒø:"+project.getName());
+		NoteBuilder noteBuilder = new NoteBuilder(context.getString(R.string.project)+":"+project.getName());
 		noteBuilder.addSeparator();
 		noteBuilder.addLine(project.getNote());
 		noteBuilder.addSeparator();
@@ -88,9 +84,9 @@ public NoteFactory(Context context,SpinerItemInfo info){
 			ArrayList<Person>persons=MyDB.getInstance(context).getPersonsByEventId(event.getId());
 			
 			noteBuilder.addLine(event.getNote());
-			noteBuilder.addLine(" ±º‰"+TimeUtility.longToString(event.getTime()));
+			noteBuilder.addLine(context.getString(R.string.time)+":"+TimeUtility.longToString(event.getTime()));
 			noteBuilder.addBlankLine();
-			noteBuilder.addLine("≤Œ”Î»À:");
+			noteBuilder.addLine(context.getString(R.string.participater)+":");
 			noteBuilder.addSeparator();
 			for(int j = 0;j<persons.size();j++){
 				noteBuilder.addLine(persons.get(j).getName());
@@ -104,11 +100,11 @@ public NoteFactory(Context context,SpinerItemInfo info){
 	public Note getEventNote(){
 		Event event = MyDB.getInstance(context).getEventById(info.getId());
 		ArrayList<Person>persons=MyDB.getInstance(context).getPersonsByEventId(info.getId());
-		NoteBuilder noteBuilder = new NoteBuilder(" ¬º˛:"+event.getName());
+		NoteBuilder noteBuilder = new NoteBuilder(context.getString(R.string.event)+":"+event.getName());
 		noteBuilder.addLine(event.getNote());
 		noteBuilder.addSeparator();
 		noteBuilder.addBlankLine();
-		noteBuilder.addLine("≤Œ”Î»À:");
+		noteBuilder.addLine(context.getString(R.string.participater)+":");
 		noteBuilder.addSeparator();
 		for(int i = 0;i<persons.size();i++){
 			noteBuilder.addLine(persons.get(i).getName());
@@ -118,11 +114,11 @@ public NoteFactory(Context context,SpinerItemInfo info){
 	public Note getConpanyNote(){
 		Company company = MyDB.getInstance(context).getCompanyById(info.getId());
 		ArrayList<Person>persons = MyDB.getInstance(context).getPersonsByCompanyId(info.getId());
-		NoteBuilder noteBuilder = new NoteBuilder("π´Àæ:"+company.getName());
+		NoteBuilder noteBuilder = new NoteBuilder(context.getString(R.string.company)+":"+company.getName());
 		noteBuilder.addSeparator();
 		noteBuilder.addLine(company.getName());
 		noteBuilder.addSeparator();
-		noteBuilder.addLine("œ‡πÿ»ÀŒÔ");
+		noteBuilder.addLine(context.getString(R.string.person));
 		noteBuilder.addBlankLine();
 		for(int i=0;i<persons.size();i++){
 			noteBuilder.addLine(persons.get(i).getName());

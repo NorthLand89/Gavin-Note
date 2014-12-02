@@ -350,14 +350,38 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int action_settings=0x7f070000;
         public static final int add=0x7f070001;
         public static final int app_name=0x7f070002;
-        public static final int esdk__err_api_setup=0x7f070003;
-        public static final int esdk__err_authentication=0x7f070004;
-        public static final int esdk__err_protocol_version=0x7f070005;
-        public static final int esdk__evernote=0x7f070006;
-        public static final int esdk__evernote_login_failed=0x7f070007;
-        public static final int esdk__evernote_login_successful=0x7f070008;
-        public static final int esdk__loading=0x7f070009;
-        public static final int hello_world=0x7f07000a;
+        public static final int cancel=0x7f070003;
+        public static final int cancelEvent=0x7f070004;
+        public static final int cellphone=0x7f070005;
+        public static final int company=0x7f070006;
+        public static final int confirm=0x7f070007;
+        public static final int deleteComplete=0x7f070008;
+        public static final int deleteFailed=0x7f070009;
+        public static final int doing=0x7f07000a;
+        public static final int email=0x7f07000b;
+        public static final int error=0x7f07000c;
+        public static final int esdk__err_api_setup=0x7f07000d;
+        public static final int esdk__err_authentication=0x7f07000e;
+        public static final int esdk__err_protocol_version=0x7f07000f;
+        public static final int esdk__evernote=0x7f070010;
+        public static final int esdk__evernote_login_failed=0x7f070011;
+        public static final int esdk__evernote_login_successful=0x7f070012;
+        public static final int esdk__loading=0x7f070013;
+        public static final int event=0x7f070014;
+        public static final int eventremind=0x7f070015;
+        public static final int hello_world=0x7f070016;
+        public static final int ifDelete=0x7f070017;
+        public static final int inputKeyword=0x7f070018;
+        public static final int message=0x7f070019;
+        public static final int noPerson=0x7f07001a;
+        public static final int note=0x7f07001b;
+        public static final int participater=0x7f07001c;
+        public static final int person=0x7f07001d;
+        public static final int phone=0x7f07001e;
+        public static final int please_checkout=0x7f07001f;
+        public static final int project=0x7f070020;
+        public static final int time=0x7f070021;
+        public static final int untitled=0x7f070022;
     }
     public static final class style {
         /** 

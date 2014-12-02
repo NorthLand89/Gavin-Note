@@ -5,12 +5,6 @@ import java.io.Serializable;
 import android.R.integer;
 
 public class SpinerItemInfo implements Serializable{
-	/**
-	 * Activity全局跳转,fragment更新携带的信息类
-	 * DataType 枚举数据类型 用于接受者判断
-	 * ID 数据库所需数据ID
-	 * name 用于在Spinner中显示
-	 */
 	private static final long serialVersionUID = 1L;
 	private DataType dataType;
 

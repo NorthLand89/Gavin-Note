@@ -42,7 +42,7 @@ String keyWord;
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.expandable_list);
 		keyWord = getIntent().getStringExtra("keyWord");
-		getActionBar().setTitle(keyWord+" µÄËÑË÷½Y¹û");
+		getActionBar().setTitle(keyWord);
 		init();
 		myDB = MyDB.getInstance(getApplicationContext());
 		searchPerson();

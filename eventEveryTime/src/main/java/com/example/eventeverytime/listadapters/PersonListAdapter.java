@@ -9,11 +9,6 @@ import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-/**
- * 人物列表适配器
- * @author 世欣
- *
- */
 public class PersonListAdapter extends BaseAdapter {
 	Context context;
 	ArrayList<Person> persons;

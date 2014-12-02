@@ -4,10 +4,6 @@ package com.example.eventeverytime.bean;
 import android.content.ContentValues;
 import android.database.Cursor;
 
-/**
- * 项目的实体类
- * Created by gavin on 14-11-15.
- */
 public class Project implements ContentValuesGetable ,Containable,CursorCreateable{
     private int id;
     private String name;
@@ -51,7 +47,6 @@ public class Project implements ContentValuesGetable ,Containable,CursorCreateab
     @Override
     public ContentValues getContValues() {
         ContentValues values=new ContentValues();
-//        values.put("id",id);
         values.put("name",name);
         values.put("note",note);
         return values;

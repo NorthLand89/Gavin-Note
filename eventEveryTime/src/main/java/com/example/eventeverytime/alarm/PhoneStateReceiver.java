@@ -16,9 +16,6 @@ import android.text.StaticLayout;
 import android.util.Log;
 import android.widget.Toast;
 /**
- * 电话的广播监听
- * 用于触发#AddEventActivity
- * @author 世欣
  *
  */
 public class PhoneStateReceiver extends BroadcastReceiver {
@@ -26,19 +23,18 @@ public class PhoneStateReceiver extends BroadcastReceiver {
 
 	@Override
 	public void onReceive(Context context, Intent intent) {
-		
 		String number = intent.getExtras().getString("incoming_number");
 		TelephonyManager tm=(TelephonyManager) context.getSystemService(context.TELEPHONY_SERVICE);
 		int statu=tm.getCallState();
+        Log.i("Go","go"+statu);
+
 		Setting setting=Setting.getInstance(context);
-		//判断配置文件 如果未开启电话提醒则返回
 		if(!setting.isRemindCall()){
 			setting.backUp();
 			return;
 		}
 		
 		if(number==null&&statu==0){
-			//呼出电话挂断时
 			Intent newIntent= new Intent(context,AddEventActivity.class);
 			newIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 			newIntent.putExtra("number", "");
@@ -46,7 +42,6 @@ public class PhoneStateReceiver extends BroadcastReceiver {
 			context.startActivity(newIntent);
 			
 		}else if(statu ==0){
-			//呼入电话挂断时
 		StringBuilder builder = new StringBuilder(number);
 		if(builder.length()>4){
 		builder.delete(0, 3);
@@ -59,7 +54,6 @@ public class PhoneStateReceiver extends BroadcastReceiver {
 		}else {
 			
 		}
-		//备份配置
 		setting.backUp();
 	}
 }

@@ -4,10 +4,6 @@ package com.example.eventeverytime.bean;
 import android.content.ContentValues;
 import android.database.Cursor;
 
-/**
- * 用于存储事件的类
- * Created by 世欣 on 14-11-15.
- */
 public class Event implements ContentValuesGetable,Containable,CursorCreateable,Comparable<Event>{
     private int id;
     private String name;

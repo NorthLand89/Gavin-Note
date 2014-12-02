@@ -18,12 +18,12 @@ public final class R {
 		public static final int esdk__oauth = 0x7f090000;
 	}
 	public static final class string {
-		public static final int esdk__err_api_setup = 0x7f070003;
-		public static final int esdk__err_authentication = 0x7f070004;
-		public static final int esdk__err_protocol_version = 0x7f070005;
-		public static final int esdk__evernote = 0x7f070006;
-		public static final int esdk__evernote_login_failed = 0x7f070007;
-		public static final int esdk__evernote_login_successful = 0x7f070008;
-		public static final int esdk__loading = 0x7f070009;
+		public static final int esdk__err_api_setup = 0x7f07000d;
+		public static final int esdk__err_authentication = 0x7f07000e;
+		public static final int esdk__err_protocol_version = 0x7f07000f;
+		public static final int esdk__evernote = 0x7f070010;
+		public static final int esdk__evernote_login_failed = 0x7f070011;
+		public static final int esdk__evernote_login_successful = 0x7f070012;
+		public static final int esdk__loading = 0x7f070013;
 	}
 }
